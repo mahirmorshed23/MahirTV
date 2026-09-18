@@ -1,7 +1,10 @@
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
+
+from poster import generate_poster
+
 
 app = FastAPI()
 
@@ -13,23 +16,30 @@ def get_movies():
     movies = []
 
     for file in MEDIA_DIR.iterdir():
-        if file.is_file():
-            movies.append({
-                "title": file.stem,
-                "filename": file.name
-            })
+
+        if file.is_file() and file.suffix.lower() == ".mp4":
+
+            poster = generate_poster(file)
+
+            movies.append(
+                {
+                    "title": file.stem,
+                    "filename": file.name,
+                    "poster": poster.name if poster else None,
+                }
+            )
 
     return movies
 
 
 @app.get("/movies/{filename}")
-def stream_movie(filename: str):
+def get_media(filename: str):
     file_path = MEDIA_DIR / filename
 
-    if not file_path.exists():
-        return {"error": "Movie not found"}
+    if not file_path.exists() or not file_path.is_file():
+        raise HTTPException(
+            status_code=404,
+            detail="File not found",
+        )
 
-    return FileResponse(
-        file_path,
-        media_type="video/mp4"
-    )
+    return FileResponse(file_path)

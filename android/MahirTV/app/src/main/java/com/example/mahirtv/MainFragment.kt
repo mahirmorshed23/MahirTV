@@ -125,13 +125,18 @@ class MainFragment : BrowseSupportFragment() {
 
                     val title = jsonMovie.getString("title")
                     val filename = jsonMovie.getString("filename")
+                    val poster = jsonMovie.optString("poster", "")
 
                     val movie = Movie(
                         id = i.toLong(),
                         title = title,
                         description = "",
                         backgroundImageUrl = null,
-                        cardImageUrl = null,
+                        cardImageUrl = if (poster != null) {
+                            "$serverUrl/movies/$poster"
+                        } else {
+                            null
+                        },
                         videoUrl = "$serverUrl/movies/$filename",
                         studio = ""
                     )
@@ -201,16 +206,18 @@ class MainFragment : BrowseSupportFragment() {
 
             if (item is Movie) {
                 Log.d(TAG, "Item: " + item.toString())
-                val intent = Intent(activity!!, DetailsActivity::class.java)
-                intent.putExtra(DetailsActivity.MOVIE, item)
+                val intent = Intent(activity!!, PlaybackActivity::class.java)
+                intent.putExtra(PlaybackActivity.MOVIE, item)
 
-                val bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                    activity!!,
-                    (itemViewHolder.view as ImageCardView).mainImageView!!,
-                    DetailsActivity.SHARED_ELEMENT_NAME
-                )
-                    .toBundle()
-                startActivity(intent, bundle)
+                startActivity(intent)
+
+//                val bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(
+//                    activity!!,
+//                    (itemViewHolder.view as ImageCardView).mainImageView!!,
+//                    DetailsActivity.SHARED_ELEMENT_NAME
+//                )
+//                    .toBundle()
+//                startActivity(intent, bundle)
             } else if (item is String) {
                 if (item.contains(getString(R.string.error_fragment))) {
                     val intent = Intent(activity!!, BrowseErrorActivity::class.java)

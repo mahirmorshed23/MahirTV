@@ -6,6 +6,10 @@ import androidx.fragment.app.FragmentActivity
 /** Loads [PlaybackVideoFragment]. */
 class PlaybackActivity : FragmentActivity() {
 
+    companion object {
+        const val MOVIE = "movie"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
