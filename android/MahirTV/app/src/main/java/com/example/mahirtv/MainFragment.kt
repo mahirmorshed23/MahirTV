@@ -46,7 +46,8 @@ class MainFragment : BrowseSupportFragment() {
 
 
     private val client = OkHttpClient()
-    private val serverUrl = "http://192.168.0.160:8000"
+    private var serverUrl: String? = null
+    private var serverDiscovery: ServerDiscovery? = null
 
     private val mHandler = Handler(Looper.myLooper()!!)
     private lateinit var mBackgroundManager: BackgroundManager
@@ -65,17 +66,20 @@ class MainFragment : BrowseSupportFragment() {
 
         setupUIElements()
 
-        loadRows()
-
         setupEventListeners()
+
+        startServerDiscovery()
     }
 
     override fun onDestroy() {
+        serverDiscovery?.stop()
+
         super.onDestroy()
+
         Log.d(TAG, "onDestroy: " + mBackgroundTimer?.toString())
+
         mBackgroundTimer?.cancel()
     }
-
     private fun prepareBackgroundManager() {
 
         mBackgroundManager = BackgroundManager.getInstance(activity)
@@ -99,11 +103,13 @@ class MainFragment : BrowseSupportFragment() {
 
     private fun loadRows() {
 
+        val url = serverUrl ?: return
+
         Thread {
 
             try {
                 val request = Request.Builder()
-                    .url("$serverUrl/movies")
+                    .url("$url/movies")
                     .build()
 
                 val response = client.newCall(request).execute()
@@ -132,12 +138,12 @@ class MainFragment : BrowseSupportFragment() {
                         title = title,
                         description = "",
                         backgroundImageUrl = null,
-                        cardImageUrl = if (poster != null) {
-                            "$serverUrl/movies/$poster"
+                        cardImageUrl = if (poster.isNotEmpty()) {
+                            "$url/movies/$poster"
                         } else {
                             null
                         },
-                        videoUrl = "$serverUrl/movies/$filename",
+                        videoUrl = "$url/movies/$filename",
                         studio = ""
                     )
 
@@ -146,10 +152,13 @@ class MainFragment : BrowseSupportFragment() {
 
                 requireActivity().runOnUiThread {
 
-                    val rowsAdapter = ArrayObjectAdapter(ListRowPresenter())
+                    val rowsAdapter =
+                        ArrayObjectAdapter(ListRowPresenter())
+
                     val cardPresenter = CardPresenter()
 
-                    val listRowAdapter = ArrayObjectAdapter(cardPresenter)
+                    val listRowAdapter =
+                        ArrayObjectAdapter(cardPresenter)
 
                     for (movie in movies) {
                         listRowAdapter.add(movie)
@@ -300,5 +309,45 @@ class MainFragment : BrowseSupportFragment() {
         private val GRID_ITEM_HEIGHT = 200
         private val NUM_ROWS = 6
         private val NUM_COLS = 15
+    }
+
+
+
+
+    private fun startServerDiscovery() {
+
+        Toast.makeText(
+            activity,
+            "Looking for MahirTV server...",
+            Toast.LENGTH_SHORT
+        ).show()
+
+        serverDiscovery = ServerDiscovery(requireContext()) { discoveredUrl ->
+
+            requireActivity().runOnUiThread {
+
+                // Ignore repeated discovery of the same server
+                if (serverUrl == discoveredUrl) {
+                    return@runOnUiThread
+                }
+
+                serverUrl = discoveredUrl
+
+                Log.d(
+                    TAG,
+                    "MahirTV server discovered: $serverUrl"
+                )
+
+                Toast.makeText(
+                    activity,
+                    "MahirTV server found",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                loadRows()
+            }
+        }
+
+        serverDiscovery?.start()
     }
 }
