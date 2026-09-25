@@ -21,11 +21,14 @@ def get_movies():
 
             poster = generate_poster(file)
 
+            subtitle = file.with_suffix(".srt")
+
             movies.append(
                 {
                     "title": file.stem,
                     "filename": file.name,
                     "poster": poster.name if poster else None,
+                    "subtitle": subtitle.name if subtitle.exists() else None,
                 }
             )
 

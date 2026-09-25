@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 9.2.1" type="baseline" client="gradle" dependencies="false" name="AGP (9.2.1)" variant="all" version="9.2.1">
+
+    <issue
+        id="OldTargetApi"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details."
+        errorLine1="        targetSdk = 36"
+        errorLine2="        ~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="16"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="            ContextCompat.getDrawable(activity!!, androidx.leanback.R.drawable.lb_ic_sad_cloud)"
+        errorLine2="                                      ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/ErrorFragment.kt"
+            line="21"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="            ContextCompat.getDrawable(activity!!, androidx.leanback.R.drawable.lb_ic_sad_cloud)"
+        errorLine2="                                      ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/ErrorFragment.kt"
+            line="21"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireFragmentManager() instead of fragmentManager!!"
+        errorLine1="            fragmentManager!!.beginTransaction().remove(this@ErrorFragment).commit()"
+        errorLine2="            ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/ErrorFragment.kt"
+            line="27"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireFragmentManager() instead of fragmentManager!!"
+        errorLine1="            fragmentManager!!.beginTransaction().remove(this@ErrorFragment).commit()"
+        errorLine2="            ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/ErrorFragment.kt"
+            line="27"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        mBackgroundManager.attach(activity!!.window)"
+        errorLine2="                                  ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/MainFragment.kt"
+            line="86"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        mDefaultBackground = ContextCompat.getDrawable(activity!!, R.drawable.default_background)"
+        errorLine2="                                                       ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/MainFragment.kt"
+            line="87"
+            column="56"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        activity!!.windowManager.defaultDisplay.getMetrics(mMetrics)"
+        errorLine2="        ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/MainFragment.kt"
+            line="89"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        brandColor = ContextCompat.getColor(activity!!, R.color.fastlane_background)"
+        errorLine2="                                            ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/MainFragment.kt"
+            line="99"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        brandColor = ContextCompat.getColor(activity!!, R.color.fastlane_background)"
+        errorLine2="                                            ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/MainFragment.kt"
+            line="99"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        searchAffordanceColor = ContextCompat.getColor(activity!!, R.color.search_opaque)"
+        errorLine2="                                                       ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/MainFragment.kt"
+            line="101"
+            column="56"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        searchAffordanceColor = ContextCompat.getColor(activity!!, R.color.search_opaque)"
+        errorLine2="                                                       ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/MainFragment.kt"
+            line="101"
+            column="56"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="            Toast.makeText(activity!!, &quot;Implement your own in-app search&quot;, Toast.LENGTH_LONG)"
+        errorLine2="                           ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/MainFragment.kt"
+            line="200"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        Glide.with(activity!!)"
+        errorLine2="                   ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/MainFragment.kt"
+            line="256"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="            activity!!.intent.getSerializableExtra(DetailsActivity.MOVIE) as Movie?"
+        errorLine2="            ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="53"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="            val intent = Intent(activity!!, MainActivity::class.java)"
+        errorLine2="                                ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="64"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        Glide.with(activity!!)"
+        errorLine2="                   ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="71"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        row.imageDrawable = ContextCompat.getDrawable(activity!!, R.drawable.default_background)"
+        errorLine2="                                                      ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="90"
+            column="55"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        row.imageDrawable = ContextCompat.getDrawable(activity!!, R.drawable.default_background)"
+        errorLine2="                                                      ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="90"
+            column="55"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        val width = convertDpToPixel(activity!!, DETAIL_THUMB_WIDTH)"
+        errorLine2="                                     ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="91"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        val height = convertDpToPixel(activity!!, DETAIL_THUMB_HEIGHT)"
+        errorLine2="                                      ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="92"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="        Glide.with(activity!!)"
+        errorLine2="                   ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="93"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="            ContextCompat.getColor(activity!!, R.color.selected_background)"
+        errorLine2="                                   ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="140"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="            ContextCompat.getColor(activity!!, R.color.selected_background)"
+        errorLine2="                                   ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="140"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="                val intent = Intent(activity!!, PlaybackActivity::class.java)"
+        errorLine2="                                    ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="152"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="                val intent = Intent(activity!!, PlaybackActivity::class.java)"
+        errorLine2="                                    ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="152"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="                Toast.makeText(activity!!, action.toString(), Toast.LENGTH_SHORT).show()"
+        errorLine2="                               ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="156"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="UseRequireInsteadOfGet"
+        message="Use requireActivity() instead of activity!!"
+        errorLine1="                Toast.makeText(activity!!, action.toString(), Toast.LENGTH_SHORT).show()"
+        errorLine2="                               ~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/VideoDetailsFragment.kt"
+            line="156"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="RedundantLabel"
+        message="Redundant label can be removed"
+        errorLine1="            android:label=&quot;@string/app_name&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="26"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of Gradle than 9.4.1 is available: 9.8.0"
+        errorLine1="distributionUrl=https\://services.gradle.org/distributions/gradle-9.4.1-bin.zip"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/MyTV/android/MahirTV/gradle/wrapper/gradle-wrapper.properties"
+            line="5"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.application than 9.2.1 is available: 9.4.1"
+        errorLine1="agp = &quot;9.2.1&quot;"
+        errorLine2="      ~~~~~~~">
+        <location
+            file="$HOME/MyTV/android/MahirTV/gradle/libs.versions.toml"
+            line="2"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of `compileSdk` than 36 is available: 37"
+        errorLine1="        version = release(36) {"
+        errorLine2="                  ^">
+        <location
+            file="build.gradle.kts"
+            line="8"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.core:core-ktx than 1.18.0 is available: 1.19.1"
+        errorLine1="coreKtx = &quot;1.18.0&quot;"
+        errorLine2="          ~~~~~~~~">
+        <location
+            file="$HOME/MyTV/android/MahirTV/gradle/libs.versions.toml"
+            line="3"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="NewerVersionAvailable"
+        message="A newer version of com.squareup.okhttp3:okhttp than 4.12.0 is available: 5.5.0"
+        errorLine1="    implementation(&quot;com.squareup.okhttp3:okhttp:4.12.0&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="45"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="NewerVersionAvailable"
+        message="A newer version of com.github.bumptech.glide:glide than 4.16.0 is available: 5.0.9"
+        errorLine1="glide = &quot;4.16.0&quot;"
+        errorLine2="        ~~~~~~~~">
+        <location
+            file="$HOME/MyTV/android/MahirTV/gradle/libs.versions.toml"
+            line="5"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="PrivateResource"
+        message="The resource `@drawable/lb_ic_sad_cloud` is marked as private in androidx.leanback:leanback:1.2.0"
+        errorLine1="            ContextCompat.getDrawable(activity!!, androidx.leanback.R.drawable.lb_ic_sad_cloud)"
+        errorLine2="                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/ErrorFragment.kt"
+            line="21"
+            column="51"/>
+    </issue>
+
+    <issue
+        id="PrivateResource"
+        message="The resource `@drawable/lb_ic_sad_cloud` is marked as private in androidx.leanback:leanback:1.2.0"
+        errorLine1="            ContextCompat.getDrawable(activity!!, androidx.leanback.R.drawable.lb_ic_sad_cloud)"
+        errorLine2="                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/ErrorFragment.kt"
+            line="21"
+            column="51"/>
+    </issue>
+
+    <issue
+        id="DiscouragedApi"
+        message="Fixed screen orientations will be ignored in most cases, starting from Android 16. Android is moving toward a model where apps are expected to adapt to various orientations, display sizes, and aspect ratios."
+        errorLine1="            android:screenOrientation=&quot;landscape&quot;>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="28"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MergeRootFrame"
+        message="This `&lt;FrameLayout>` can be replaced with a `&lt;merge>` tag"
+        errorLine1="&lt;FrameLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/layout/activity_details.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.app_icon_your_company` appears to be unused">
+        <location
+            file="src/main/res/drawable/app_icon_your_company.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.mipmap.ic_launcher_round` appears to be unused">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_round.webp"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.grid_view` appears to be unused"
+        errorLine1="    &lt;string name=&quot;grid_view&quot;>Grid View&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="5"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.personal_settings` appears to be unused"
+        errorLine1="    &lt;string name=&quot;personal_settings&quot;>Personal Settings&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="7"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details">
+        <location
+            file="src/main/res/drawable/img.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/app_icon_your_company.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/app_icon_your_company.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/img.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/img.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/movie.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/movie.png"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `String.toUri` instead?"
+        errorLine1="            Uri.parse(videoUrl).lastPathSegment ?: title"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/PlaybackVideoFragment.kt"
+            line="66"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        errorLine1="                    preferences.edit()"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/PlaybackVideoFragment.kt"
+            line="132"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `String.toUri` instead?"
+        errorLine1="            Uri.parse(videoUrl)"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/PlaybackVideoFragment.kt"
+            line="140"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        errorLine1="            preferences.edit()"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/mahirtv/PlaybackVideoFragment.kt"
+            line="163"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;com.squareup.okhttp3:okhttp:4.12.0&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="45"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;androidx.media3:media3-exoplayer:1.11.1&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="46"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;androidx.media3:media3-ui:1.11.1&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="47"
+            column="20"/>
+    </issue>
+
+</issues>

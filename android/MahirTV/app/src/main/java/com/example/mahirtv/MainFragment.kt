@@ -132,6 +132,7 @@ class MainFragment : BrowseSupportFragment() {
                     val title = jsonMovie.getString("title")
                     val filename = jsonMovie.getString("filename")
                     val poster = jsonMovie.optString("poster", "")
+                    val subtitle = jsonMovie.optString("subtitle", "")
 
                     val movie = Movie(
                         id = i.toLong(),
@@ -144,7 +145,12 @@ class MainFragment : BrowseSupportFragment() {
                             null
                         },
                         videoUrl = "$url/movies/$filename",
-                        studio = ""
+                        studio = "",
+                        subtitleUrl = if (subtitle.isNotEmpty()) {
+                            "$url/movies/$subtitle"
+                        } else {
+                            null
+                        }
                     )
 
                     movies.add(movie)
